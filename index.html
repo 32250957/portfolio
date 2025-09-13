@@ -10,9 +10,12 @@
         background-color: #f5f5f5;
       }
       .card {
+        flex: 1;
+        min-width: 250px;
         background: white;
         width: 300px auto;
-        margin: 50px auto;
+        margin-top: 10px;
+        margin-bottom: 5px auto;
         padding: 20px;
         border-radius: 16px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -25,36 +28,121 @@
       .card p {
         margin: 6px 0;
       }
-      img {
-        border-radius: 25px;
+      .img-profile {
+        border-radius: 16px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        width: 300px;
-        height: 400px;
+        width: 295px;
+        height: 380px;
         object-fit: contain;
       }
       .page-top {
-        background: rgb(0, 0, 0);
-        width: 2000px;
+        border-bottom-right-radius: 16px;
+        border-bottom-left-radius: 16px;
+        background: rgb(255, 255, 255);
+        width: 100%;
         height: 100px;
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .page-top ul {
+        list-style: none;
+        display: flex;
+        gap: 100px; /* 메뉴 간 간격 */
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none; /* 불릿(점) 제거 */
+        margin: 0;
+        padding: 0;
+        display: flex; /* li들을 가로로 나열 */
+        justify-content: center; /* 가로 중앙 정렬 */
+        gap: 40px; /* 항목 간격 */
+      }
+      li {
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+      }
+      .card-container {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap; /* 여러 줄 허용 */
+        gap: 10px; /* 카드 사이 간격 */
+        justify-content: space-between; /* 가운데 정렬 */
+        margin: 0 auto;
+      }
+      button {
+        background: #ffffff00;
+        color: rgb(0, 0, 0);
+        padding: 6px 18px;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      button:hover {
+        background: #000000;
+        color: rgb(255, 255, 255);
       }
     </style>
   </head>
   <header>
     <div class="page-top">
-      <p>TEST</p>
+      <ul>
+        <li>소개</li>
+        <li>학력</li>
+        <li>블로그</li>
+        <li>자격증 · 수상이력</li>
+        <li>포트폴리오</li>
+        <li>연락처</li>
+      </ul>
     </div>
   </header>
   <body>
     <div class="card">
-      <img class "img" src="KakaoTalk_20250911_124140924.jpg" alt="..." />
+      <h1>소개</h1>
+      <img
+        class="img-profile"
+        src="KakaoTalk_20250911_124140924.jpg"
+        alt="..."
+      />
       <h2>김윤우</h2>
-      <p>소속 : 단국대학교 퇴계혁신칼리지(SW융합계열광역)</p>
-      <p>좋아하는 색: 검은색</p>
-      <p>취미: 백준 문제 풀기</p>
-      <p>좋아하는 언어: Java</p>
-      <p>Mail : kyw060423@dankook.ac.kr</p>
+      <p>
+        안녕하세요, 단국대학교 퇴계혁신칼리지에 재학중인 김윤우입니다.<br />
+        주로 PS를 하고 있으며 주 언어는 Java입니다.<br />
+        더욱 뛰어난 프로그래머가 되기 위해 노력하고 있습니다.
+      </p>
+    </div>
+    <div class="card-container">
+      <div class="card">
+        <h1>학력</h1>
+        <p>오포초등학교(졸업)<br /></p>
+        <p>ㅤ</p>
+        <p>광주광남중학교(졸업)<br /></p>
+        <p>ㅤ</p>
+        <p>광남고등학교(졸업)<br /></p>
+        <p>ㅤ</p>
+        <p>단국대학교 (퇴계혁신칼리지/재학)</p>
+      </div>
+      <div class="card">
+        <h1>블로그</h1>
+        <button
+          onclick="location.href='https://goldfire-coding-home.tistory.com/'"
+        >
+          Tistory
+        </button>
+        <p>주로 PS 관련 내용을 올리고 있습니다.</p>
+        <p>ㅤ</p>
+        <button onclick="location.href='https://blog.naver.com/kyw9853/'">
+          네이버 블로그
+        </button>
+        <p>어쩌다 가끔 일상 내용을 업로드 합니다.</p>
+      </div>
     </div>
   </body>
 </html>
